@@ -17,19 +17,7 @@ build:
         name: Back-End Install
         command: |
           npm run backend:install
-    - run:
-        name: Front-End Build
-        command: |
-          npm run frontend:build
-    - run:
-        name: Back-End Build
-        command: |
-          npm run backend:build
-workflows:
+  workflows:
   bulid:
     jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - main
+      - build
