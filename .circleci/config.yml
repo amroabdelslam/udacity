@@ -26,6 +26,10 @@ build:
        command: |
          npm run backend:build
 workflows:
- jobs:
-  -install
-  -build
+  install-bulid:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
